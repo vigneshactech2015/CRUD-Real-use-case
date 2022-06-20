@@ -1,4 +1,4 @@
-    var url="https://60f061c58970e90017405c05.mockapi.io/users";
+        var url="https://60f061c58970e90017405c05.mockapi.io/users";
     
 
     //Read Users
@@ -87,6 +87,7 @@ else{
 
 function refreshUsers(){
  document.querySelector('.user-list').remove();
+ formReset();
  getUsers();
 }
 
@@ -107,4 +108,11 @@ document.querySelector('#submit-users').innerText='Edit Users';
 document.querySelector('.new-user-name').value=userName;
 document.querySelector('.new-profile-pic').value=userAvatar;
 localStorage.setItem('userId',userId)
+}
+
+function formReset(){
+  document.querySelector('#submit-users').innerText='Add Users';
+  document.querySelector('.new-user-name').value='';
+  document.querySelector('.new-profile-pic').value='';
+  localStorage.removeItem("userId");
 }
